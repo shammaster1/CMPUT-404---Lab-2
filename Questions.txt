@@ -1,0 +1,8 @@
+1. The socket is created using socket.socket() and specifying the socket type as socket.SOCK_STREAM will use TCP.
+ (if you wanted to use UDP, you would use socket.SOCK_DGRAM)
+2. Client initializes the connection while the server listens for the connection
+3. We use "s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)" first arg is the layer
+and the second arg is the layer we want to change. We set it to true (arg of 1). Allows port to be reused.
+4. clients IP and port
+5. the server will recieve an empty byte string when the connection has ended.
+6. https://github.com/shammaster1/CMPUT-404---Lab-2.git

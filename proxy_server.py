@@ -47,6 +47,7 @@ def start_server():
     Create the socket in 'with' block to ensure it gets auto-closed once
     we're done.
     '''
+    print("====Server had started.====")
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
         #bind the server to a specific host and port on this machine
         server_socket.bind((PROXY_SERVER_HOST, PROXY_SERVER_PORT))
@@ -69,6 +70,7 @@ def start_server():
 
 #start multi-threaded proxy server
 def start_threaded_server():
+    print("====Threaded server has started.====")
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
         server_socket.bind((PROXY_SERVER_HOST, PROXY_SERVER_PORT))
         server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
